@@ -1,0 +1,22 @@
+version: "3.7"
+networks:
+  equest_proxy:
+    external: true
+services:
+  cassandra:
+    image: cassandra:3
+    container_name: cassandra
+    ports:
+      - "7000:7000" # DB port
+      - "9042:9042" # Client port
+    volumes:
+      - "./volumes/cassandra:/var/lib/cassandra"
+      # - :/bitnami/cassandra/conf/cassandra.yaml:ro
+    networks:
+      - equest_proxy
+      - default
+    environment:
+      # - CASSANDRA_SEEDS=cassandra
+      # - CASSANDRA_PASSWORD_SEEDER=yes
+      - CASSANDRA_USER=cassandra
+      - CASSANDRA_PASSWORD=cassandra

@@ -1,0 +1,22 @@
+{
+	"name": "testapp",
+	"version": "1.0.0",
+	"private": true,
+	"scripts": {
+		"dev": "tsnd ./src/main.ts",
+		"build": "ts-engine build --node-app",
+		"lint": "ts-engine lint",
+		"start": "ts-engine start",
+		"test": "ts-engine test",
+		"typecheck": "ts-engine typecheck"
+	},
+	"dependencies": {
+		"@ts-engine/runtime": "^1.10.0",
+		"kafkajs": "^1.12.0"
+	},
+	"devDependencies": {
+		"@ts-engine/cli": "^1.10.0",
+		"@types/node": "^14.0.27",
+		"ts-node-dev": "^1.0.0-pre.56"
+	}
+}
