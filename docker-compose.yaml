@@ -20,3 +20,13 @@ services:
       # - CASSANDRA_PASSWORD_SEEDER=yes
       - CASSANDRA_USER=cassandra
       - CASSANDRA_PASSWORD=cassandra
+
+  postgres:
+    image: postgres:12.3
+    container_name: postgres
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - PGDATA=/var/lib/postgresql/data/pgdata
+    volumes:
+      - "/custom/mount:/var/lib/postgresql/data"
