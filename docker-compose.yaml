@@ -29,4 +29,4 @@ services:
       - POSTGRES_PASSWORD=postgres
       - PGDATA=/var/lib/postgresql/data/pgdata
     volumes:
-      - "/custom/mount:/var/lib/postgresql/data"
+      - "./volumes/postgres:/var/lib/postgresql/data"
