@@ -3,9 +3,9 @@ networks:
   equest_proxy:
     external: true
 services:
-  cassandra:
+  equest-cassandra:
     image: cassandra:3
-    container_name: cassandra
+    container_name: equest-cassandra
     ports:
       - "7000:7000" # DB port
       - "9042:9042" # Client port
@@ -21,9 +21,9 @@ services:
       - CASSANDRA_USER=cassandra
       - CASSANDRA_PASSWORD=cassandra
 
-  postgres:
+  equest-postgres:
     image: postgres:12.3
-    container_name: postgres
+    container_name: equest-postgres
     environment:
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=postgres
